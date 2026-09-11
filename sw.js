@@ -1,6 +1,6 @@
 // Household expenses offline support
-const CACHE = "household-8a2a45e5b4";
-const ASSETS = ["./","./app.js","./apple-touch-icon.png","./chunk-7FJMP7AK.js","./chunk-GRRM3MAS.js","./chunk-SQE76S5B.js","./dotgothic16.woff2","./icon-192.png","./icon-512.png","./icon-maskable-512.png","./index.html","./manifest.json"];
+const CACHE = "household-48a92b5085";
+const ASSETS = ["./","./app-77TG7EKS.js","./apple-touch-icon.png","./chunk-7FJMP7AK.js","./chunk-GRRM3MAS.js","./chunk-SQE76S5B.js","./dotgothic16.woff2","./icon-192.png","./icon-512.png","./icon-maskable-512.png","./index.html","./manifest.json"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
