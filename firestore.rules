@@ -1,0 +1,45 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    match /households/{householdId} {
+      function members() {
+        return resource.data.members;
+      }
+
+      // Anyone signed in who knows the household ID can read it. The ID is a
+      // long random code, and it is only shared between the two phones.
+      allow read: if signedIn();
+
+      // The creator must put themselves in as the only member.
+      allow create: if signedIn()
+        && request.resource.data.members == [request.auth.uid]
+        && request.resource.data.keys().hasOnly(['members', 'names', 'budgets', 'exported', 'createdAt']);
+
+      // A member can change the household. Someone joining may only add
+      // themselves to the member list, and may not remove anyone.
+      allow update: if signedIn() && (
+        request.auth.uid in members()
+        || (
+          !(request.auth.uid in members())
+          && request.resource.data.members == members().concat([request.auth.uid])
+          && request.resource.data.budgets == resource.data.budgets
+          && request.resource.data.exported == resource.data.exported
+        )
+      );
+
+      allow delete: if false;
+
+      match /payments/{paymentId} {
+        function household() {
+          return get(/databases/$(database)/documents/households/$(householdId)).data;
+        }
+        allow read, write: if signedIn() && request.auth.uid in household().members;
+      }
+    }
+  }
+}
