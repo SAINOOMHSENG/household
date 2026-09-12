@@ -1,6 +1,6 @@
 // Household expenses offline support
-const CACHE = "household-7666f9ac68";
-const ASSETS = ["./","./app-FO3CQ6KW.js","./apple-touch-icon.png","./chunk-3IRPSJAB.js","./chunk-7CIBPRCX.js","./chunk-7FJMP7AK.js","./chunk-GRRM3MAS.js","./chunk-M3ELU2VF.js","./chunk-R76KJOHZ.js","./chunk-SQE76S5B.js","./config.js","./dotgothic16.woff2","./firestore.rules","./icon-192.png","./icon-512.png","./icon-maskable-512.png","./index.html","./manifest.json"];
+const CACHE = "household-12c5983edf";
+const ASSETS = ["./","./app-GEFGDVNL.js","./apple-touch-icon.png","./chunk-3IRPSJAB.js","./chunk-7CIBPRCX.js","./chunk-7FJMP7AK.js","./chunk-GRRM3MAS.js","./chunk-M3ELU2VF.js","./chunk-R76KJOHZ.js","./chunk-SQE76S5B.js","./config.js","./dotgothic16.woff2","./firestore.rules","./icon-192.png","./icon-512.png","./icon-maskable-512.png","./index.html","./manifest.json"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
