@@ -1,4 +1,4 @@
-const firebaseConfig = {
+window.HOUSEHOLD_FIREBASE = {
   apiKey: "AIzaSyBWWHNQMsTEQW5H5sFAkp76k0TiShKkFBY",
   authDomain: "household-822be.firebaseapp.com",
   projectId: "household-822be",
