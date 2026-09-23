@@ -1,3 +1,4 @@
+
 window.HOUSEHOLD_FIREBASE = {
   apiKey: "AIzaSyBWWHNQMsTEQW5H5sFAkp76k0TiShKkFBY",
   authDomain: "household-822be.firebaseapp.com",
@@ -9,5 +10,5 @@ window.HOUSEHOLD_FIREBASE = {
 
 window.HOUSEHOLD_MAILER = {
   url: "https://script.google.com/macros/s/AKfycbzjhOelYNUjbaHcBKYo3XC97zzzN2_JGyNQP6FsFpQY9WfVIZieY28_4-M8pTBFfVOE/exec",
-  to: "financial.report@gmail.com",
+  to: "finicial.report@gmail.com",
 };
