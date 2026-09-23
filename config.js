@@ -8,6 +8,6 @@ window.HOUSEHOLD_FIREBASE = {
 };
 
 window.HOUSEHOLD_MAILER = {
-  url: "PASTE_YOUR_SCRIPT_URL_HERE",
+  url: "https://script.google.com/macros/s/AKfycbzjhOelYNUjbaHcBKYo3XC97zzzN2_JGyNQP6FsFpQY9WfVIZieY28_4-M8pTBFfVOE/exec",
   to: "financial.report@gmail.com",
 };
